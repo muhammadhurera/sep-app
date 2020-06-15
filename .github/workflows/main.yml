@@ -24,7 +24,6 @@ jobs:
       uses: actions/setup-node@v2-beta
       with:
         version: 12
-
     - name: GitHub Action for Yarn
       uses: Borales/actions-yarn@v2.3.0
       with:
@@ -32,10 +31,10 @@ jobs:
         cmd: install
 
     - name: building yarn
-      run:  yarn build  
+      run:  yarn build    
       
     - name: installing surge
       run: npm install -g surge
       
     - name: deploying on surge
-      run: surge ./build nice-ladybug.surge.sh --token ${{secrets.NEWVAL}}
+      run: surge ./build unable-look.surge.sh --token ${{secrets.SURGE_TOKEN}}
